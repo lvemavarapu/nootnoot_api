@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
         if @message.errors.any? 
             render.json:@message.errors, status: :unprocessable_entity
         else
-            render json:@message, status: 200
+            render json:@message.transform_message, status: 200
     end
 end
 def check_ownership

@@ -5,7 +5,8 @@ class UsersController < ApplicationController
             auth_token = Knock::AuthToken.new payload: {sub: @user.id}
           render json:{username:@user.username, jwt:auth_token.token} ,status:200
         else
-          render json:@user.errors, status:201
+          #render json:@user.errors, status:201
+          render json:{error:"user exists"}, status: :unprocessable_entity
     end
   end
   def sign_in
