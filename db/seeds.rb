@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if User.count == 0
-User.create(username:"lavanya", email:"lavanya@ca.com",password:"1234",password_confirmation:"1234")
-User.create(username:"lavanya2", email:"lavanya2@ca.com",password:"12345",password_confirmation:"12345")
+User.create(username:"lavanya", email:"lavanya@ca.com",password:"1234",password_confirmation:"1234",isAdmin: true)
+User.create(username:"lavanya2", email:"lavanya2@ca.com",password:"12345",password_confirmation:"12345",isAdmin: false)
 end
 if Message.count == 0
     Message.create(m_text:'Rails API lesson today',user_id:1)
